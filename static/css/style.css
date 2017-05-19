@@ -1,0 +1,91 @@
+#wrapper{
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0px auto;
+}
+#formbox{
+    background-color: lightseagreen;
+    border-radius: 5px;
+    width: 30%;
+    padding: 20px;
+    color: white;
+}
+#header{
+}
+#messagewrap{
+    margin: 20px 50px;
+    padding: 20px;
+    background-color: lightgreen;
+    border-radius: 5px;
+}
+.mess{
+    margin-left: 30px;
+}
+.commenter{
+    margin-left: 60px;
+}
+.comm{
+    margin-left: 80px;
+}
+.small{
+    font-size: 80%;
+}
+.headitem{
+    display: inline-block;
+    margin: 10px;
+}
+
+.left{
+    float: left;
+    clear: left;
+}
+.right{
+    float: right;
+}
+.rclear{
+    clear: right;
+}
+.left, .right{
+    display: inline-block;
+}
+.input_text {
+     width: 90%;
+     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+     box-sizing: border-box;         /* Opera/IE 8+ */
+     height: 100px;
+}
+.comment{
+     width: 80%;
+     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+     box-sizing: border-box;         /* Opera/IE 8+ */
+     height: 30px;
+     float: right;
+}
+/*.success_message{
+    color: white;
+    background-color: lightseagreen;
+    font-size: 120%;
+    padding: 10px;
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+.error_message{
+    color: white;
+    background-color: lightcoral;
+    font-size: 120%;
+    padding: 10px;
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;*/
+/*}*/
+label{
+    width: 180px;
+    padding-right:10px;
+    display: inline-block;
+    vertical-align: top;
+}
+/*input, label{
+    float: left;
+}*/

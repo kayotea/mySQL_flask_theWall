@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Login And Registration: Registration Page</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <br>
+        <div id="wrapper">
+            <div id="header">
+                <h2 class="headitem left">CodingDojo Wall</h2>
+                <p class="headitem right"><a href="/logoff">log off</a></p>
+                <p class="headitem right">Welcome {{ user['first_name'] }}!</p>
+            </div>
+            <br>
+            <p></p>
+            <br>
+            <hr>
+            <div id="messagewrap">
+                <form action="/post" method="post">
+                    <b>Post A Message:</b><br><br>
+                    <input type="textarea" name="add_post" class="input_text center"><br><br>
+                    <input type="submit" value="Post a message">
+                </form>
+                <br>
+                {% for message in messages%}
+                    {% for user in users %}
+                        {% if message['user_id'] == user['id'] %}
+                            <p><b>{{user['first_name']}} {{user['last_name']}} - {{message['date']}}</b></p>
+                        {% endif %}
+                    {% endfor %}
+                    <p class="mess"> {{message['message']}}
+                    {% if message['user_id'] == session['login'] %}
+                        <a class="small" href="/delete/message/{{message['id']}}">Delete message</a></p>
+                    {% endif %}
+                    {% for comment in comments%}
+                        {% if comment['message_id'] == message['id'] %}
+                            {% for user in users %}
+                                {% if comment['user_id'] == user['id'] %}
+                                    <p class="commenter"><b>{{user['first_name']}} {{user['last_name']}} - {{comment['date']}}</b></p>
+                                {% endif %}
+                            {% endfor %}
+                            <p class="comm">{{comment['comment']}}
+                            {% if comment['user_id'] == session['login'] %}
+                                <a class="small" href="/delete/comment/{{comment['id']}}">Delete comment</a></p>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    <form action="/comment" method="post">
+                        <input type="textarea" name="comment" class="comment center">
+                        <input type="hidden" name="mess_id" value="{{message['id']}}">
+                        <br><br>
+                        <input type="submit" value="Comment" class="right"><br>
+                    </form>
+                {% endfor %}
+            </div>
+        </table>
+        </div>
+    </body>
+</html>

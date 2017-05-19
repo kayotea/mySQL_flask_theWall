@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Login And REgistration</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        {{ session['login_message'] }}
+        <div id="wrapper">
+            <h2>WELCOME TO THE WALL</h2>
+            <h3>Login:</h3>
+            <form action="/login" method="post" id="formbox">
+                <label for="email">Email:</label>
+                <input type="text" name="email"><br>
+                <label for="password">Password:</label>
+                <input type="text" name="password"><br><br>
+                <input type="submit" value="Login">
+            </form><br>
+            <h3><a href="/register">Click Here To Register</a></h3>
+        </div>
+    </body>
+</html>
